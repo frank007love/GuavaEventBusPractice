@@ -14,6 +14,9 @@ public class TestEventBus {
     private MJGoToWanhua MJGoToWanhuaHandler = new MJGoToWanhua();
     private MJGoToPronhubButWebCrash MJGoToPronhubButWebCrashHandler = new MJGoToPronhubButWebCrash();
     
+    
+    private MJGoToWanhua2 MJGoToWanhuaHandler2 = new MJGoToWanhua2();
+    
     private void thenTheHandlerShouldReceiveTheEvent() {
         assertEquals(1, MJGoToPronhubHandler.getReceivedEvents().size());
         assertEquals(1, MJGoToWanhuaHandler.getReceivedEvents().size());
@@ -22,6 +25,7 @@ public class TestEventBus {
     private void givenEventBusRegisterTwoGoodHandler(EventBus eventBus) {
         eventBus.register(MJGoToPronhubHandler);
         eventBus.register(MJGoToWanhuaHandler);
+        eventBus.register(MJGoToWanhuaHandler2);
     }
     
     @Test
